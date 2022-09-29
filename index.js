@@ -18,6 +18,9 @@ app.use(logger);
 app.get("/", async (req, res) => {
   res.sendFile(path.join(__dirname, "index.html"));
 });
+app.get("/favicon.ico", async (req, res) => {
+  res.sendFile(path.join(__dirname, "favicon.ico"));
+});
 
 // 更新计数
 app.post("/api/count", async (req, res) => {
