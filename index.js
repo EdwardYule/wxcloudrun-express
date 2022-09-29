@@ -2,7 +2,6 @@ const path = require("path");
 const express = require("express");
 const cors = require("cors");
 const morgan = require("morgan");
-const randomName = require('chinese-random-name');
 const { init: initDB, Counter } = require("./db");
 
 const logger = morgan("tiny");
@@ -53,15 +52,15 @@ app.get("/api/personList", async (req, res) => {
     code: 0,
     data: [
       {
-        name: randomName.generate(),
+        name: "ddd",
         idCard: "124",
       },
       {
-        name: randomName.generate(),
+        name: "ddd",
         idCard: "124",
       },
       {
-        name: randomName.generate(),
+        name: "ddd",
         idCard: "124",
       },
     ],
