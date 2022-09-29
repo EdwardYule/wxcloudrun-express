@@ -2,6 +2,7 @@ const path = require("path");
 const express = require("express");
 const cors = require("cors");
 const morgan = require("morgan");
+const randomName = require('chinese-random-name');s
 const { init: initDB, Counter } = require("./db");
 
 const logger = morgan("tiny");
@@ -40,6 +41,27 @@ app.get("/api/count", async (req, res) => {
   res.send({
     code: 0,
     data: result,
+  });
+});
+
+// 获取身份证列表
+app.get("/api/personList", async (req, res) => {
+  res.send({
+    code: 0,
+    data: [
+      {
+        name: randomName.generate(),
+        idCard: "124",
+      },
+      {
+        name: randomName.generate(),
+        idCard: "124",
+      },
+      {
+        name: randomName.generate(),
+        idCard: "124",
+      },
+    ],
   });
 });
 
