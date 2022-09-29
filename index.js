@@ -2,7 +2,7 @@ const path = require("path");
 const express = require("express");
 const cors = require("cors");
 const morgan = require("morgan");
-const randomName = require('chinese-random-name');s
+const randomName = require('chinese-random-name');
 const { init: initDB, Counter } = require("./db");
 
 const logger = morgan("tiny");
