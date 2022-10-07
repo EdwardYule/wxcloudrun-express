@@ -1,18 +1,12 @@
 const path = require("path");
 const randomName = require('chinese-random-name');
-const { getIdCard } = require('utils/utils');
+const { getIdCard } = require('../utils');
 
-export default {
+module.exports = {
   "/": {
     method: 'get',
     handler: async (req, res) => {
-      res.sendFile(path.join(__dirname, "index.html"));
-    }
-  },
-  "/favicon.ico": {
-    method: 'get',
-    handler: async (req, res) => {
-      res.sendFile(path.join(__dirname, "favicon.ico"));
+      res.sendFile(path.join(path.resolve(__dirname, "../public"), "index.html"));
     }
   },
   "/api/personList": {

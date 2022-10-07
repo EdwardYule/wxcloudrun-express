@@ -3,14 +3,14 @@ const express = require("express");
 const cors = require("cors");
 const morgan = require("morgan");
 
-const api = require("/api");
+const api = require("./api");
 
 const { init: initDB, Counter } = require("./db");
 
 const logger = morgan("tiny");
 
 const app = express();
-app.use('/assets', express.static('assets'));
+app.use('/public', express.static('public'));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(cors());
